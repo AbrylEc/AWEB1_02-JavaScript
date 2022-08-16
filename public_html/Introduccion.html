@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <label>Ingresa una palabra: </label>
+        <input type="text" id="palabra">
+        <button type="button" 
+                onclick="inDatos()/*Significa que es una función*/">
+            Ingresar
+        </button>
+        <!--  <div id="r"></div> -->
+        <!-- <label id="r"></label> -->
+        <h2 id="r"></h2>
+
+        <input type="text" id="palabra01"/>
+        <hr>
+        <hr>
+        <h1>Ejemplo 01 Introducción</h1>
+        <div id="formContacto">
+            <label>Contacto 1:</label>
+            <input type="number" id="cl">
+            <br>
+        </div>
+        <button type="button" onclick="addFormContacto()">Add</button>
+        <br>
+        <button type="button" onclick="InContactos()">Imprimir</button>
+        <p id="rContactos"></p>
+
+        <script>
+            //document.getElementById.value para input
+            //document.getElementById('r').innerHTML psra el resto de etiquetas
+            //document.getElementById('r').innerHTML += "nuevo";
+            //const inDatos = ()=>{//
+            function inDatos(){
+                /*alert("Ingresó en la función");
+                console.log("Ingresa a la función");*/
+                const resp = document.getElementById('r');
+                const palabra = document.getElementById('palabra');
+                let palabra1 = document.getElementById('palabra01');
+                
+                resp.innerHTML = palabra.value;
+                palabra1.value=palabra.value;  
+            }
+            
+             function InContactos(){
+                 let cl = document.getElementById('cl');
+                 let rc = document.getElementById('rContactos');
+                 rc.innerHTML = cl.value + "<br>";
+                 
+                 for(let i = 2; i<cont; i++){
+                     let cN = document.getElementById('c'+i);
+                     rc.innerHTML += cN.value + "<br>";                     
+                 }
+             }
+             
+             let cont = 2;
+             function addFormContacto(){
+                 //Funciòn para capturar los datos
+                 //push(valor);
+                 let divFormContacto = document.getElementById('formContacto');
+                 let newContacto = "<label>Contacto " +cont+":</label>";
+                 newContacto += "<input type='number' id='c"+cont+"'/>";
+                 newContacto += "<br>";
+                 
+                 //Esta lìnea borra los datos y coloca los nuevos
+                 divFormContacto.innerHTML += newContacto;
+                 //divFormContacto.innerHTML = divFormContacto.innerHTML + newContacto;
+                 cont++;
+                 //divFormContacto.innerHTML = divFormContacto.innerHTML + newContacto;
+                 //Funciòn paraimprimir los datos en el formulario
+    }                      
+        </script>
+    </body>
+</html>

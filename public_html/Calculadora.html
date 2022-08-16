@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="container" align="center">
+            <br>
+            <h1 align ="center"><strong>CALCULADORA</strong></h1>
+            <hr>
+
+            <div>
+                <textarea id="panelCalculadora"></textarea>
+                <br><br>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <table>
+                        <tr>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="borrarPanel()">
+                                    ce                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="borrarPorChar()">
+                                    c                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('/')">
+                                    <!--  onclick="addChar(this)"> -->
+                                    /                                   
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('+')">
+                                    +                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('-')">
+                                    -                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('*')">
+                                    <!--  onclick="addChar(this)"> -->
+                                    *                                   
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('7')">
+                                    7                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('8')">
+                                    8                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('9')">
+                                    9                                   
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('4')">
+                                    4                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('5')">
+                                    5                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('6')">
+                                    6                                   
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('1')">
+                                    1                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('2')">
+                                    2                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('3')">
+                                    3                                  
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('0')">
+                                    0                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px"
+                                    onclick="addChar('.')">
+                                    .                                   
+                                </button>
+                            </td>
+                            <td>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-dark"
+                                    style="width: 40px; height: 40px">
+                                    =                                   
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-2"></div>               
+            </div>           
+        </div>
+
+        <script>
+             function addChar(char){           
+             /*document.getElementById('pamelCalculadora').innerHTML = char; Para
+             que se pueda presentar tiene que estar en value y con +=*/
+              document.getElementById('panelCalculadora').value += char;
+            }
+            function borrarPanel(){
+                document.getElementById('panelCalculadora').value = "";
+            }
+            
+            function borrarPorChar(){
+            /*let textArea = document.getElementById('panelCalculadora').value;
+            textArea = textArea.charAt(textArea.length - 1);
+            document.getElementById('panelCalculadora').value += textArea;*/
+            
+            let textArea = document.getElementById('panelCalculadora').value;
+            textArea = textArea.substring(0,textArea.length - 1);
+            document.getElementById('panelCalculadora').value = textArea;            
+            }
+        </script>
+
+    </body>
+</html>

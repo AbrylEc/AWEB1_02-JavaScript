@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+
+Realizar una aplicación que permita:
+- Calcular si un número ingresado es primo.
+- Si el número ingresado es primo, generar e imprimir la misma cantidad de inputs hacia abajo.
+- Si el número ingresado no es primo, generar e imprimir la misma cantidad de textareas hacia abajo.
+-->
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Convertir Números a Letras</title>
+
+        <style>
+            #numero {
+                padding:10px;
+                text-align:right;
+            }
+        </style>
+    </head>
+    <body> 
+        <div class="container" >
+            <fieldset>
+                <legend><strong> EXAMEN SEGUNDO PARCIAL - IDENTIFICACIÓN DE NÚMEROS PRIMOS </strong></legend>
+                <hr>
+                <form>
+                 
+                    <input type="number" id="numPrimo" placeholder="Introduce un número">
+
+                    <button 
+                        type="button" 
+                        class="btn btn-dark"
+                        style="width: 100px; height: 40px"
+                        onclick="esPrimo()">
+                        Evaluar                              
+                    </button>
+
+
+                    <hr>
+                </form>
+            </fieldset>
+        </div>  
+        <div id ='value'></div>
+    </body>
+
+    <script>
+        
+      const esPrimo = () => {
+        let number = Number(document.getElementById("numPrimo").value);
+        esPrimo = true;
+        if (number === 1) {
+          createInput(number);
+        } else if (number > 1) {
+          for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+              esPrimo = false;
+              break
+            }
+          }
+        }
+        if (esPrimo) {
+          conversionInputs(number);
+        } else {
+          conversionTextAreas(number);
+        }
+      };
+
+      const conversionTextAreas = (num) => {
+        const result = document.getElementById("value");
+        cleanDisplay(result);
+        for (let i = 0; i < num; i++) {
+          var input = document.createElement("textArea");
+          result.appendChild(input);
+        }
+      };
+      
+        const conversionInputs = (num) => {
+        const result = document.getElementById("value");
+        cleanDisplay(result);
+        for (let i = 0; i < num; i++) {
+          var input = document.createElement("input");
+          result.appendChild(input);
+        }
+      };
+      
+      const limpiarDisplay = (parent) => {
+        while (parent.firstChild) {
+          parent.removeChild(parent.firstChild);
+        }
+      };
+      
+    </script>
+
+</html>

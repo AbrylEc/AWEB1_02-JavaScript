@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+/*IMPORTAR EN HTML TODOS LOS PROYECTOS JS
+Le agregamos un defer en index.js para que se cargue luego de hacer un load en 
+la página. Se podría colocar antes de la etiqueta de cierre del body.*/
+-->
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='jsTareaCalculadora/Display.js' type='text/javascript'></script>
+        <script src='jsTareaCalculadora/Calculadora.js' type='text/javascript'></script>     
+        <script src='jsTareaCalculadora/index.js' type='text/javascript' defer></script>      
+        <style>
+            * {
+                font-family: fantasy;
+                color: #fff;
+            }
+
+            body {
+                margin: 0;
+                background-color: black;
+            }
+
+            .container {
+                /*los elementos HTML se adaptan y colocan automáticamente y es 
+                más fácil personalizar los diseños*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .calculadora {
+                /*Proporciona una cuadrícula de una sola columna, por lo que los
+                elementos se mostrarán uno debajo de otro. Se deberán agregar 
+                columnas.*/
+                display: grid;
+                /*Para agregar columnas en grid. La siguiente opciòn permite que
+                cada 4 col se vayan repitiendo las filas hacia abajo con el 
+                tamaño de largo de 75px*/
+                grid-template-columns: repeat(4, 75px);
+                /*El primer argumeto va a ser el alto toal del sisplay,
+                el segundo argumento un repeat para el restro de las rows que
+                son 5 y van a tener 75px de medida*/
+                grid-template-rows: 160px repeat(5, 75px);
+                background-color:  hotpink;
+                /*Para que los botones no queden muy pegados a los bordes*/
+                padding: 15px;
+                /*Redondeado para los bordes*/
+                border-radius: 32px;
+                /*Sombra*/
+                box-shadow: 15px 10px 0px 5px #824870;
+            }
+
+            button {
+                /*Otro estilo de puntero*/
+                cursor: pointer;
+                margin: 5px;
+                padding: 0;
+                border-radius: 32px;
+                font-size: 1.5em;
+                border: none;
+                background-color: hotpink;
+                box-shadow: 5px/*ejex*/ 5px/*ejey*/ 10px -3px #824870,
+                    -5px -5px 15px 3px #ff82c0;
+            }
+
+            /*Para cuando el usuario de click sobre el botòn*/
+            button:active {
+                background-color: #ff4ca5;
+            }
+
+            /*Para que no aparezca un borde automàtico de selección por fuera
+            del botón*/
+            button:focus {
+                outline: none;
+            }
+
+            /*Los botones con esta clase ocuparan 2 columnas del calculadora que 
+           se encuentra dentro del contenedor*/
+            .col2{
+                grid-column: span 2;
+            }
+
+            .display {
+                grid-column: 1 / -1;
+                padding: 16px;
+                display: flex;
+                margin: 10px/*arriba*/ 10px/*Dos costados*/ 20px/*abajo*/;
+                /*Para que los valores se vean uno encima del otro*/
+                flex-direction: column;
+                /*Para que todo se vaya hacia la derecha*/
+                align-items: flex-end;
+                background-color: #363636;
+                border-radius: 32px;
+                text-align: right;
+                justify-content: space-between;
+                /*Saltos de linea para cuando el texto llena los espacios del 
+                contenedor*/
+                word-break: break-all;
+                /*Utilizar la sombra para un efecto de borde*/
+                /*Ubicación de la sombra. Se coloca
+                0px 0px para que esté centrado completamente*/
+                box-shadow: 0px 0px
+                    0px/*sin opacidad*/ 10px/*grosor de la sombra*/ #824870;
+            }
+
+            #valorActual {
+                font-size: 1.5em /*Una em es una unidad de medida en el campo de
+                                 la tipografía, lo que equivale al tamaño en 
+                                 puntos especificado actualmente.*/;
+            }
+
+            #valorAnterior {
+                font-size: 2em;
+            }
+
+        </style><!-- comment -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="calculadora">
+                <div class="display">
+                    <div id="valorAnterior"></div>
+                    <div id="valorActual"></div>
+                </div>
+                <button class="col2" onclick="display.borrarTodo()">C</button>
+                <button onclick="display.borrar()">&larr;</button>
+                <button class="operador" value='dividir'>/</button>
+                <button class="numero">7</button>
+                <button class="numero">8</button>
+                <button class="numero">9</button>
+                <button class="operador" value='multiplicar'>x</button>
+                <button class="numero">4</button>
+                <button class="numero">5</button>
+                <button class="numero">6</button>
+                <button class="operador" value='restar'>-</button>
+                <button class="numero">1</button>
+                <button class="numero">2</button>
+                <button class="numero">3</button>
+                <button class="operador" value='sumar'>+</button>
+                <button class="numero" style='grid-column: span 2'>0</button>
+                <button class="numero">.</button>
+                <button class="operador">=</button>
+            </div>            
+        </div>
+
+        <script>
+         
+        </script>
+    </body>
+</html>
